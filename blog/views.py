@@ -48,4 +48,18 @@ def delete(request, pk):
     blog.delete()
     return redirect('home')
 
+# comment 기능 #
+
+def comment_update(request, pk):
+    comment = get_object_or_404(Comment, pk=pk)
+    blog = get_object_or_404(Blog, pk=comment.blog.id)
+
+    if request.method == 'POST':
+        form = CommentForm(request.POST, instance=comment)
+        if form.is_valid():
+            form.save()
+            return redirect('/blog/'+str(blog.id))
+    else:
+        form = CommentForm(instance=comment)
+    return render(request, 'blog/comment_update.html', {'form': form})
 
