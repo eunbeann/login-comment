@@ -1,4 +1,5 @@
 @import "reset.css";
+/* 수정하기 */
 /* FONT */
 @font-face {
   font-family: "CookieRunOTF-Bold";
@@ -33,7 +34,7 @@ header {
   flex-direction: row;
   width: 100%;
   height: 10%;
-  background-color: #092e20;
+  background-color: #F4B942;
   color: white;
 }
 
@@ -62,7 +63,7 @@ section {
 /* footer */
 
 footer {
-  background-color: #44b78b;
+  background-color: #F4B942;
   width: 100%;
   display: flex;
   align-items: center;
@@ -77,7 +78,7 @@ footer p {
 /* 공통 요소 */
 
 h3 {
-  color: #0c4b33;
+  color: #F4B942;
   font-size: 2rem;
 }
 
@@ -91,7 +92,7 @@ h3 {
   display: flex;
   align-items: center;
   flex-direction: column;
-  border: 1px dashed #092e20;
+  border: 1px dashed #F4B942;
   margin: 1em 1em;
 }
 
@@ -102,7 +103,7 @@ h3 {
 }
 .home a {
   all: unset;
-  color: #0c4b33;
+  color: #F4B942;
   font-size: 2rem;
   cursor: pointer;
 }
@@ -128,12 +129,19 @@ h3 {
   font-size: 20px;
   align-items: center;
   font-family: "Noto Sans KR", sans-serif;
+  background: #F2D69A;
+  color: #EFF2F1;
+  border: none;
+
 }
 
 #id_body {
   font-size: 15px;
   align-items: center;
   font-family: "Noto Sans KR", sans-serif;
+  background: #F2D69A;
+  color: #EFF2F1;
+  border: none;
 }
 
 /* detail.html */
@@ -156,7 +164,7 @@ h3 {
   font-weight: bolder;
 }
 .btn a:hover {
-  color: #44b78b;
+  color: #F2D69A;
 }
 
 .detail p {
@@ -172,15 +180,16 @@ form {
 }
 
 input {
-  background-color: white;
-  color: #44b78b;
-  border: 1px solid #44b78b;
+  font-family: "CookieRunOTF-Bold";
+  color: #53A548;
   border-radius: 5px;
-  font-size: 12pt;
+  border: none;
+  font-size: 20pt;
+
 }
 
 input:hover {
-  background-color: #44b78b;
-  color: white;
-  border: 1px solid #44b78b;
+  background-color: #53A548;
+  color: #EFF2F1;
+  
 }
