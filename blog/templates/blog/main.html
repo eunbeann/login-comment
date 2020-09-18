@@ -1,6 +1,6 @@
 <h1>Main page</h1>
 
-<a href=""  
+
 
 
 {% if request.user.is_authenticated %}
@@ -10,5 +10,6 @@
 <a href="javascript:{document.getElementById('logout').submit()}">Logout</a>
                     <form id="logout" method="POST" action="{% url 'logout' %}">
                         {% csrf_token %} <input type = "hidden" />
+                   <h3><a href="{% url 'home'%}"> 글쓰러 가기 </a></h3>  
                     </form>
 {% endif %}

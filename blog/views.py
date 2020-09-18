@@ -2,13 +2,14 @@ from django.shortcuts import render, redirect, get_object_or_404
 from .models import Blog, Comment
 from .forms import BlogForm, CommentForm
 from django.contrib.auth.models import User
-from django. contrib import auth
+from django.contrib import auth
 
+def main(request):
+    return render(request, 'main.html')
 
 def home(request):
     blogs = Blog.objects
     return render(request, 'blog/home.html', {'blogs': blogs})
-
 
 def create(request):
     if request.method == 'POST':
@@ -77,8 +78,7 @@ def comment_delete(request, pk):
 
 # 로그인
 
-def main(request):
-    return render(request, 'main.html')
+
 
 def signup(request):
     if request.method == "POST":
