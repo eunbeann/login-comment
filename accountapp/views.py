@@ -7,6 +7,14 @@ def main(request):
     return render(request, 'main.html')
 
 def signup(request):
+    if request.method == "POST":
+        if request.POST['password1'] == request.POST['password2']:
+            user = User.objects.create_user(
+                request.POST['username'],
+                password=request.POST['password1']
+            )
+            auth.login(request, user)
+            return redirect('main')
     return render(request, 'signup.html')
 
 def login(request):
