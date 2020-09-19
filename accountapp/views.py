@@ -13,9 +13,25 @@ def signup(request):
                 request.POST['username'],
                 password=request.POST['password1']
             )
-            auth.login(request, user)
+            auth.login(request, user, backend="django.contrib.auth.backends.ModelBackend")
             return redirect('main')
     return render(request, 'signup.html')
 
 def login(request):
-    return render(request, 'login.html')
+    if request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['password']
+        user = auth.authenticate(request, username=username, password=password)
+        if user is not None:
+            auth.login(request, user)
+            return redirect('main')
+        else:
+            return render(request, 'login.html')
+    else:
+        return render(request, 'login.html')
+
+def logout(request):
+    if request.method == 'POST':
+        auth.logout(request)
+        return redirect('main')
+    return render(request, 'signup.html')
