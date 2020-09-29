@@ -25,6 +25,7 @@ body {
   flex-direction: column;
   font-family: "Noto Sans KR", sans-serif;
   background-color: #ebf0f1;
+  text-align: center;
 }
 
 /* header */
@@ -37,6 +38,7 @@ header {
   background-color: #F4B942;
   color: white;
 }
+
 
 header h1 {
   display: inline-block;
@@ -78,8 +80,12 @@ footer p {
 /* 공통 요소 */
 
 h3 {
-  color: #F4B942;
+  color: #f56b2b;
   font-size: 2rem;
+}
+
+h6 {
+  text-align: center;
 }
 
 .date {

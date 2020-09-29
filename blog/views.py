@@ -72,3 +72,17 @@ def comment_delete(request, pk):
         return redirect('/blog/'+str(blog.id))
     else:
         return render(request, 'blog/comment_delete.html', {'object': comment})
+
+
+def edit(request, pk):
+    board = get_object_or_404(Board, pk=pk)
+    if request.method == "POST":
+        form = BoardForm(request.POST, instance=board)
+        if form.is_valid():
+            board = form.save(commit = False)
+            board.update_date = timezone.now()
+            board.save()
+            return redirect('show')
+    else:
+        form = BoardForm(instance=board)
+        return render(request,'post.html', {'form':form})
