@@ -1,7 +1,30 @@
 {% extends 'base.html' %} {% block content %}
-<h1>Sign up!</h1>
+<input type="submit" value="Sign up!">
 
-<div id="map" style="width:500px;height:400px;"></div>
+
+<form method="POST" action="{% url 'signup' %}">
+    {% csrf_token %}
+
+    Username:
+    <br>
+    <input name="username" type="text" value="">
+    <br>
+    Password:
+    <br>
+    <input name="password1" type="password" value="">
+    <br>
+    Confirm Password :
+    <br>
+    <input name="password2" type="password" value="">
+    <br>
+    <br>
+</form>
+
+<br>
+<br>
+<br>
+
+<div id="map" style="width:500px;height:400px; align-items: center;"></div>
 
 <script type="text/javascript" src= "//dapi.kakao.com/v2/maps/sdk.js?appkey=ab573ada3bc5b410d89caa980b9d1418&libraries=services"></script>
 <script>
@@ -42,23 +65,4 @@ geocoder.addressSearch('서울특별시 도봉구 삼양로 144길 33 덕성여�
 });
 
 </script>
-
-<form method="POST" action="{% url 'signup' %}">
-    {% csrf_token %}
-
-    Username:
-    <br>
-    <input name="username" type="text" value="">
-    <br>
-    Password:
-    <br>
-    <input name="password1" type="password" value="">
-    <br>
-    Confirm Password :
-    <br>
-    <input name="password2" type="password" value="">
-    <br>
-    <br>
-    <input type="submit" value="Sign up!">
-</form>
 {% endblock %}

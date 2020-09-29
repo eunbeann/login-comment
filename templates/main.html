@@ -4,7 +4,7 @@
 <br>
 {% if request.user.is_anonymous %}
 <h1 style="text-align: center;" >어서오세요!</h1>
-<a href="{% url 'login' %}"><h4 style="float: left; margin-right:20px; text-align:center;">로그인</h4></a> 
+<a href="{% url 'login' %}"><h4 style="float: left; margin-left: 200px; margin-right:20px; text-align:center;">로그인</h4></a> 
 <a href="{% url 'signup' %}"><h4 style="float: left; text-align:center;">회원가입</h4></a>
 {% endif %}
 
@@ -16,7 +16,7 @@
 {% if request.user.is_authenticated %}
 
 <h3>환영합니다, {{ user.username }}님! </h3>
-<h5>새 글 쓰기를 원하신다면 create 메뉴로 이동해주세요</h5>
+<h5>새 글 쓰기를 원하신다면 create 메뉴로 이동해주세요.</h5>
 
 <a href="javascript:{document.getElementById('logout').submit()}">Logout</a>
                     <form id="logout" method="POST" action="{% url 'logout' %}"> 

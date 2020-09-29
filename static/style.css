@@ -28,6 +28,10 @@ body {
   text-align: center;
 }
 
+h4 {
+  align-items: center;
+}
+
 /* header */
 header {
   display: flex;
